@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /simas
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /Tes/index.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /Tes/index.php
+</IfModule>
